@@ -60,7 +60,7 @@ public class WomenCategoryPage {
         Actions hover = new Actions(driver);
         hover.moveToElement(dress03Image);
         dress03Image.click();
-        driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         addToCart.click();
        // continueShoppingButton.click();
 
