@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class WomenCategoryPage {
 
 
@@ -31,8 +33,10 @@ public class WomenCategoryPage {
    @FindBy(css = "img[src='http://automationpractice.com/img/p/8/8-home_default.jpg']")
    private WebElement dress03Image;
 
-   @FindBy(css = "div[class=button-container] > a[data-id-product='3']")
-   private WebElement addToCart;
+ //  @FindBy(css = "div[class=button-container] > a[data-id-product='3']")
+   //@FindBy(css = "li[class='ajax_block_product col-xs-12 col-sm-6 col-md-4 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered'] >div > div[class='right-block'] > div[class='button-container'] > a[class='button ajax_add_to_cart_button btn btn-default']")
+    @FindBy(xpath = "//p[@id='add_to_cart']/button")
+    private WebElement addToCart;
 
     @FindBy(css = "//a[@data-id-product'4' and @title='Add to cart']")
     private WebElement dress04AddToCart;
@@ -56,8 +60,9 @@ public class WomenCategoryPage {
         Actions hover = new Actions(driver);
         hover.moveToElement(dress03Image);
         dress03Image.click();
-        driver.wait(500);
-      //  continueShoppingButton.click();
+        driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+        addToCart.click();
+       // continueShoppingButton.click();
 
     }
     public void addDress04ToCart() {
