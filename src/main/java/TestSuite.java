@@ -12,7 +12,7 @@ public class TestSuite {
 
     @BeforeSuite
     public void setUp(){
-        WebDriverManager.getInstanc
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
     }
