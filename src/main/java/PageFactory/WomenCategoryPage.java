@@ -35,7 +35,8 @@ public class WomenCategoryPage {
 
  //  @FindBy(css = "div[class=button-container] > a[data-id-product='3']")
    //@FindBy(css = "li[class='ajax_block_product col-xs-12 col-sm-6 col-md-4 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered'] >div > div[class='right-block'] > div[class='button-container'] > a[class='button ajax_add_to_cart_button btn btn-default']")
-    @FindBy(xpath = "//p[@id='add_to_cart']/button")
+   // @FindBy(xpath = "//p[@id='add_to_cart']/button")
+    @FindBy(xpath = "a[href='http://automationpractice.com/index.php?controller=cart&add=1&id_product=3&token=e817bb0705dd58da8db074c69f729fd8']")
     private WebElement addToCart;
 
     @FindBy(css = "//a[@data-id-product'4' and @title='Add to cart']")
@@ -58,8 +59,9 @@ public class WomenCategoryPage {
     //To add individual dresses to cart and remain on the same page
     public void addDress03ToCart() throws Exception{
         Actions hover = new Actions(driver);
-        hover.moveToElement(dress03Image);
-        dress03Image.click();
+        hover.moveToElement(dress03Image, 0 , 5).perform();
+        hover.moveToElement(addToCart).perform();
+       // dress03Image.click();
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         addToCart.click();
        // continueShoppingButton.click();
@@ -67,22 +69,18 @@ public class WomenCategoryPage {
     }
     public void addDress04ToCart() {
         dress04AddToCart.click();
-       // driver.wait(5000);
         continueShoppingButton.click();
     }
     public void addDress05ToCart() {
         dress05AddToCart.click();
-      //  driver.wait(5000);
         continueShoppingButton.click();
     }
     public void addDress06ToCart() {
         dress06AddToCart.click();
-       // driver.wait(5000);
         continueShoppingButton.click();
     }
     public void addDress07ToCart() {
         dress07AddToCart.click();
-       // driver.wait(5000);
         continueShoppingButton.click();
     }
 }

@@ -1,10 +1,16 @@
 
 <suite name="TestSuite" verbose="1" >
-    <test name="test" >
+    <test name="chromeTest" >
+        <parameter name="'browser" value="chrome"/>
         <classes>
             <class name="TestSuite" />
         </classes>
     </test>
-
+<test name ="firefoxTest">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+        <class name="TestSuite"/>
+    </classes>
+    </test>
 
 </suite>
