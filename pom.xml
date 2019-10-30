@@ -45,7 +45,6 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <systemPropertyVariables>
                         <propertyName>chrome</propertyName>
-                        <propertyName></propertyName>
                         <testXMLsuite>src\\main\\resources\\testrunner\\teststructure.xml</testXMLsuite>
                     </systemPropertyVariables>
                 </configuration>
