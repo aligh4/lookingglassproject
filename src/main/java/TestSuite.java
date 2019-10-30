@@ -1,23 +1,26 @@
 import PageFactory.HomePage;
 import PageFactory.DressesCategoryPage;
+import PageFactory.ShoppingCartSummary;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import org.testng.internal.EclipseInterface;
 
 public class TestSuite {
 
     private static WebDriver driver;
-   // @Parameters({"browser"})
+    // @Parameters({"browser"})
 
-     @BeforeSuite
+    @BeforeSuite
 
-     // This method will instantiate the desired browser for this suite.
+    // This method will instantiate the desired browser for this suite.
 
-     public void setUp(){
- WebDriverManager.chromedriver().setup();
-        driver= new ChromeDriver();
+    public void setUp() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         /*        if (browser.equalsIgnoreCase("chrome")) {
              WebDriverManager.chromedriver().setup();
              driver = new ChromeDriver();
@@ -28,11 +31,12 @@ public class TestSuite {
             driver= new FirefoxDriver();
 
        } */
-     }
+    }
 
     //The first 5 test cases will add 5 dresses to the cart
 
-   @Test public void test_case01_populate_cart() throws Exception {
+    @Test
+    public ShoppingCartSummary test_case01_populate_cart() throws Exception {
         HomePage homePage = new HomePage(driver);
         driver.get("http://www.automationpractice.com");
         driver.manage().window().maximize();
@@ -43,11 +47,25 @@ public class TestSuite {
         dressesCategoryPage.addDress05ToCart();
         dressesCategoryPage.addDress06ToCart();
         dressesCategoryPage.addDress07ToCart();
+        return new ShoppingCartSummary(driver);
     }
-    @Test public void test01_verify_cart_is_populated() throws Exception{
+
+    @Test
+    public void testcase02_verify_cart_is_populated() throws Exception {
+        int expectedQty = 2;
+        Assert.assertEquals(shoppingCartSummary.totalQty(), expectedQty);
+    }
+
+    @Test void testcase03_verify_price_is_correct() throws Exception{
 
 
     }
+
+    @Test void testCase04_verify_total_price_is_correct() throws Exception{
+
+
+    }
+}
 
 
 

@@ -20,7 +20,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.0.0-beta7</version>
-            <scope>compile</scope>
          </dependency>
 
         <dependency>
@@ -30,6 +29,11 @@
             <scope>compile</scope>
     </dependency>
 
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+        </dependency>
 
     </dependencies>
 

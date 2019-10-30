@@ -16,4 +16,8 @@
     </classes>
     </test>
 
+    <listeners>
+        <listener class-name="utilities.TestListener"/>
+    </listeners>
+
 </suite>
