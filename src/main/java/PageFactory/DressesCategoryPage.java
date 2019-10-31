@@ -58,6 +58,8 @@ public class DressesCategoryPage {
     @FindBy(css = "a[title='Proceed to checkout'] > span")
     private WebElement proceedToCheckoutButton;
 
+
+
 //methods
 
     //To add individual dresses to cart and remain on the same page for the 5 dresses
