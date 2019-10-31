@@ -29,7 +29,7 @@ independently. Therefore this test should run in either Windows, OSx, or Linux.
 
 Alternatively this can be run using the terminal using the following commands:
 
-For Chrome based test: mvn test-Doption �chrome�
-For Firefox based test� mvn test-Doption �firefox�
+For Chrome based test:> mvn test -Dentry=chrome
+For Firefox based test:> mvn test -Dentry=firefox
 
 

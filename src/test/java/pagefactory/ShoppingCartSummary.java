@@ -1,4 +1,4 @@
-package PageFactory;
+package pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -129,8 +129,38 @@ public class ShoppingCartSummary {
         double dress07Price = Double.parseDouble(dress07PriceString);
         return dress07Price;
     }
-    private double totalProductsPrice(){
+    public double totalProductsPrice(){
         double totalProductsPrice = dress03price() + dress04price() + dress05price() + dress06price() + dress07price();
         return totalProductsPrice;
+    }
+    public boolean isDress03BodyTextPresent() {
+        String dress03expectedText = "SKU : demo_3";
+        String dress03bodyTextPresent = dress06text.getText();
+        boolean isDress03bodyTextPresent = dress03expectedText.equals(dress03bodyTextPresent);
+        return isDress03bodyTextPresent;
+    }
+    public boolean isDress04bodyTextPresent() {
+        String dress04expectedText = "SKU : demo_4";
+        String dress04bodyTextPresent = dress04text.getText();
+        boolean isDress04bodyTextPresent = dress04expectedText.equals(dress04bodyTextPresent);
+        return isDress04bodyTextPresent;
+    }
+    public boolean isDress05bodyTextPresent() {
+    String dress05expectedText = "SKU : demo_5";
+    String dress05bodyTextPresent = dress05text.getText();
+    boolean isDress05bodyTextPresent = dress05expectedText.equals(dress05bodyTextPresent);
+    return isDress05bodyTextPresent;
+    }
+    public boolean isDress06BodyTextPresent() {
+        String dress06expectedText = "SKU : demo_6";
+        String dress06bodyTextPresent = dress06text.getText();
+        boolean isDress06bodyTextPresent = dress06expectedText.equals(dress06bodyTextPresent);
+        return isDress06bodyTextPresent;
+    }
+    public boolean isDress07bodyTextPresent() {
+        String dress07expectedText = "SKU : demo_6";
+        String dress07bodyTextPresent = dress07text.getText();
+        boolean isDress07bodyTextPresent = dress07bodyTextPresent.equals(dress07bodyTextPresent);
+        return isDress07bodyTextPresent;
     }
 }
