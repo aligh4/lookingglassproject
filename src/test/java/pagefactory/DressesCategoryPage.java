@@ -9,19 +9,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DressesCategoryPage {
-
-
-//Constructor
+    //Constructor
     private WebDriver driver;
 
     public DressesCategoryPage(WebDriver inputDriver) {
-
         driver = inputDriver;
         PageFactory.initElements(driver, this);
-
     }
-//WebElements
 
+   //WebElements
    @FindBy(css = "img[src='http://automationpractice.com/img/p/8/8-home_default.jpg']")
    private WebElement dress03Image;
 
@@ -58,68 +54,41 @@ public class DressesCategoryPage {
     @FindBy(css = "a[title='Proceed to checkout'] > span")
     private WebElement proceedToCheckoutButton;
 
-
-
-//methods
+    //methods
+    private void selectDressToCart(WebElement dressImage, WebElement dress) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Actions hover = new Actions(driver);
+        hover.moveToElement(dressImage).perform();
+        wait.until(ExpectedConditions.visibilityOf(dress));
+        hover.moveToElement(dress).perform();
+        dress.click();
+        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
+    }
 
     //To add individual dresses to cart and remain on the same page for the 5 dresses
-
-
-    public void addDress03ToCart() throws Exception{
-        Actions hover = new Actions(driver);
-        hover.moveToElement(dress03Image).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(dress03addToCart));
-        hover.moveToElement(dress03addToCart).perform();
-        dress03addToCart.click();
-        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
-       continueShoppingButton.click();
-
+    public void addDress03ToCart() {
+        selectDressToCart(dress03Image, dress03addToCart);
+        continueShoppingButton.click();
     }
 
     public void addDress04ToCart() {
-        Actions hover = new Actions(driver);
-        hover.moveToElement(dress04Image).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(dress04AddToCart));
-        hover.moveToElement(dress04AddToCart).perform();
-        dress04AddToCart.click();
-        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
+        selectDressToCart(dress04Image, dress04AddToCart);
         continueShoppingButton.click();
     }
 
     public void addDress05ToCart() {
-        Actions hover = new Actions(driver);
-        hover.moveToElement(dress05Image).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(dress05AddToCart));
-        hover.moveToElement(dress05AddToCart).perform();
-        dress05AddToCart.click();
-        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
+        selectDressToCart(dress05Image, dress05AddToCart);
         continueShoppingButton.click();
     }
 
     public void addDress06ToCart() {
-        Actions hover = new Actions(driver);
-        hover.moveToElement(dress06Image).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(dress06AddToCart));
-        hover.moveToElement(dress06AddToCart).perform();
-        dress06AddToCart.click();
-        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
+        selectDressToCart(dress06Image, dress06AddToCart);
         continueShoppingButton.click();
     }
 
    //This Method Contains the checkout WebElement
-
     public void addDress07ToCart() {
-        Actions hover = new Actions(driver);
-        hover.moveToElement(dress07Image).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOf(dress07AddToCart));
-        hover.moveToElement(dress07AddToCart).perform();
-        dress07AddToCart.click();
-        wait.until(ExpectedConditions.visibilityOf(continueShoppingButton));
+        selectDressToCart(dress07Image, dress07AddToCart);
         proceedToCheckoutButton.click();
     }
 }

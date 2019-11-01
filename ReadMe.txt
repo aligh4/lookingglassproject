@@ -20,15 +20,17 @@ Dependencies:
 
 How to Run
 ================================================
-Download and run this code from the testrunner.xml file in IntelliJ. Be sure to specify whether you want the test to
+Download and run this code in IntelliJ. Be sure to specify whether you want the test to
 run in chrome or firefox.
+
+In the terminal:
+
+For Chrome based test:> mvn test -Dbrowser=chrome
+For Firefox based test:> mvn test -Dbrowser=firefox
 
 Since WebDriverManager dependency is used, there is no need to download or configure drivers, the library will do that
 independently. Therefore this test should run in either Windows, OSx, or Linux.
 
-Alternatively this can be run using the terminal using the following commands:
 
-For Chrome based test:> mvn test -Dentry=chrome
-For Firefox based test:> mvn test -Dentry=firefox
 
 

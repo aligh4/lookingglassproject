@@ -7,10 +7,7 @@ import pagefactory.DressesCategoryPage;
 import pagefactory.HomePage;
 import pagefactory.ShoppingCartSummary;
 
-import java.util.concurrent.TimeUnit;
-
 public class TestSuite extends TestBase {
-
 
     @Test
     public void test_case01_populate_cart() throws Exception {
@@ -19,7 +16,7 @@ public class TestSuite extends TestBase {
         HomePage homePage = new HomePage(driver);
         driver.get("http://www.automationpractice.com");
         driver.manage().window().maximize();
-        homePage.goToWomenCategoryPage();
+        homePage.goToDressesCategoryPage();
         DressesCategoryPage dressesCategoryPage = new DressesCategoryPage(driver);
         dressesCategoryPage.addDress03ToCart();
         dressesCategoryPage.addDress04ToCart();
@@ -27,53 +24,30 @@ public class TestSuite extends TestBase {
         dressesCategoryPage.addDress06ToCart();
         dressesCategoryPage.addDress07ToCart();
         ShoppingCartSummary shoppingCartSummary = new ShoppingCartSummary(driver);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         //5 dresses are listed on the summary page
         int expectedQty = 5;
         softAssert.assertEquals(shoppingCartSummary.totalQty(), expectedQty);
 
         //Verify all 5 expected dresses are listed on the summary page
-      shoppingCartSummary.isDress03BodyTextPresent();
-        softAssert.assertTrue(shoppingCartSummary.isDress03BodyTextPresent() && shoppingCartSummary.isDress04bodyTextPresent() && shoppingCartSummary.isDress05bodyTextPresent() && shoppingCartSummary.isDress06BodyTextPresent() && shoppingCartSummary.isDress07bodyTextPresent());;
+        shoppingCartSummary.isDress03BodyTextPresent();
+        boolean present = shoppingCartSummary.isDress03BodyTextPresent() &&
+                shoppingCartSummary.isDress04bodyTextPresent() &&
+                shoppingCartSummary.isDress05bodyTextPresent() &&
+                shoppingCartSummary.isDress06BodyTextPresent() &&
+                shoppingCartSummary.isDress07bodyTextPresent();
+        softAssert.assertTrue(present);
 
         //Verify Total Product Price is the same as sum of individual total prices.
+        waitForElement(By.cssSelector("[id='total_product']"));
         String actualResultString = driver.findElement(By.cssSelector("[id='total_product']")).getText();
         double actualResultDouble = Double.parseDouble(actualResultString);
         softAssert.assertEquals(shoppingCartSummary.totalProductsPrice(), actualResultDouble);
-
         softAssert.assertAll();
+        }
 
 
-  /*      // 2. Total price of every dress is correct
-        assertions.assertEquals();
 
-
-        // 3. Total product price is correct
-        assertions.assertEquals();
-        assertions.assertAll();   // <---- */
-    }
-/*
-    @Test
-    public void testcase02_verify_cart_is_populated() throws Exception {
-        int expectedQty = 5;
-        Assert.assertEquals(shoppingCartSummary.totalQty(), expectedQty);
-    }
-
-    @Test
-    void testcase03_verify_dress03_is_present() throws Exception{
-        String expectedText = "SKU : demo_6";
-        boolean bodyTextPresent = shoppingCartSummary.dress03Text.getText();
-        Assert.assertTrue(bodyTextPresent);
-    }
-
-    @Test
-    void testCase04_verify_total_price_is_correct() throws Exception{
-        String actualResultString = driver.findElement(By.cssSelector("[id='total_product']")).getText();
-        double actualResultDouble = Double.parseDouble(actualResultString);
-        Assert.assertEquals(ShoppingCartSummary.totalProductsPrice, actualResultDouble);
-    }
-*/
 }
 
 

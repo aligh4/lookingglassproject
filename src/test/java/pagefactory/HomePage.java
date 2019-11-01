@@ -1,5 +1,4 @@
 package pagefactory;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,9 +24,8 @@ public HomePage(WebDriver inputDriver){
 }
 
 //Methods
-public void goToWomenCategoryPage(){
+public void goToDressesCategoryPage(){
     dressesButtonTopBanner.click();
-//return new WomenCategoryPage(driver);
 }
 
 }

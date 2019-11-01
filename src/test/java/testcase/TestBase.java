@@ -1,10 +1,14 @@
 package testcase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
@@ -37,11 +41,26 @@ public abstract class TestBase {
         System.out.println("AT THE END OF SETUP");
     }
 
-   /* @AfterMethod
+    @AfterMethod
     public void tearDown() {
         if(driver != null) {
             driver.close();
             driver.quit();
         }
-    } */
+    }
+
+    // ===== Common Functions Used in any Test Cases =========== //
+    public static void waitFor(int second) {
+        try{
+            Thread.sleep(second * 1000);
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void waitForElement(By location) {
+        new WebDriverWait(driver, 15).until(
+                ExpectedConditions.visibilityOfElementLocated(location)
+        );
+    }
 }

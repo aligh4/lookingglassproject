@@ -2,46 +2,37 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="testcase.TestSuite" duration-ms="48711" started-at="2019-10-31T22:18:24 EDT" finished-at="2019-10-31T22:19:12 EDT">
+  <suite name="testcase.TestSuite" duration-ms="27590" started-at="2019-10-31T23:37:07 EDT" finished-at="2019-10-31T23:37:34 EDT">
     <groups>
     </groups>
-    <test name="testDemo" duration-ms="48711" started-at="2019-10-31T22:18:24 EDT" finished-at="2019-10-31T22:19:12 EDT">
+    <test name="testDemo" duration-ms="27590" started-at="2019-10-31T23:37:07 EDT" finished-at="2019-10-31T23:37:34 EDT">
       <class name="testcase.TestSuite">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcase.TestSuite@7ab4ae59]" name="setUp" is-config="true" duration-ms="34536" started-at="2019-10-31T22:18:24 EDT" finished-at="2019-10-31T22:18:58 EDT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcase.TestSuite@1886991b]" name="setUp" is-config="true" duration-ms="10759" started-at="2019-10-31T23:37:07 EDT" finished-at="2019-10-31T23:37:18 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="test_case01_populate_cart()[pri:0, instance:testcase.TestSuite@7ab4ae59]" name="test_case01_populate_cart" duration-ms="14102" started-at="2019-10-31T22:18:58 EDT" finished-at="2019-10-31T22:19:12 EDT">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="FAIL" signature="test_case01_populate_cart()[pri:0, instance:testcase.TestSuite@1886991b]" name="test_case01_populate_cart" duration-ms="16076" started-at="2019-10-31T23:37:18 EDT" finished-at="2019-10-31T23:37:34 EDT">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=78.0.3904.70)
+              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (97af3d72ad30e09d06887498789ea49e)] -> css selector: li:nth-of-type(2) .right-block [rel] span] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-IFJ005H', ip: '192.168.1.202', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\aegis\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50164}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: ef8efe1f22cdd1eb9380690cb335377c]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\aegis\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53194}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 97af3d72ad30e09d06887498789ea49e]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=78.0.3904.70)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on XP (97af3d72ad30e09d06887498789ea49e)] -> css selector: li:nth-of-type(2) .right-block [rel] span] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-IFJ005H', ip: '192.168.1.202', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\aegis\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50164}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: ef8efe1f22cdd1eb9380690cb335377c
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-at testcase.TestSuite.test_case01_populate_cart(TestSuite.java:20)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\aegis\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53194}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 97af3d72ad30e09d06887498789ea49e
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at pagefactory.DressesCategoryPage.selectDressToCart(DressesCategoryPage.java:62)
+at pagefactory.DressesCategoryPage.addDress04ToCart(DressesCategoryPage.java:75)
+at testcase.TestSuite.test_case01_populate_cart(TestSuite.java:22)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,10 +97,14 @@ at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.j
 at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:347)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_case01_populate_cart -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase.TestSuite@1886991b]" name="tearDown" is-config="true" duration-ms="714" started-at="2019-10-31T23:37:34 EDT" finished-at="2019-10-31T23:37:34 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- testcase.TestSuite -->
     </test> <!-- testDemo -->
   </suite> <!-- testcase.TestSuite -->
