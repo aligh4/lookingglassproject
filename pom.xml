@@ -28,11 +28,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>3.1.5</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -47,6 +42,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src\\test\\resources\\runner\\teststructure.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>

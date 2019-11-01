@@ -15,9 +15,8 @@ Dependencies:
 ================================================
 - Selenium-java 3.141.59
 - testNG 7.0
-- Surefire Plugin 3.0.0
-- WebDriverManager 3.7.1 
-- ExtentReports 3.1.5
+- Surefire Plugin 2.12.4
+- WebDriverManager3.7.1
 
 How to Run
 ================================================

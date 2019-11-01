@@ -1,0 +1,5 @@
+pagefactory\HomePage.class
+pagefactory\ShoppingCartSummary.class
+pagefactory\DressesCategoryPage.class
+testcase\TestBase.class
+testcase\TestSuite.class

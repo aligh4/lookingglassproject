@@ -7,7 +7,10 @@ import pagefactory.DressesCategoryPage;
 import pagefactory.HomePage;
 import pagefactory.ShoppingCartSummary;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestSuite extends TestBase {
+
 
     @Test
     public void test_case01_populate_cart() throws Exception {
@@ -24,6 +27,7 @@ public class TestSuite extends TestBase {
         dressesCategoryPage.addDress06ToCart();
         dressesCategoryPage.addDress07ToCart();
         ShoppingCartSummary shoppingCartSummary = new ShoppingCartSummary(driver);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         //5 dresses are listed on the summary page
         int expectedQty = 5;

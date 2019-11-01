@@ -49,7 +49,7 @@ public class DressesCategoryPage {
     @FindBy(xpath = "//div[@id='center_column']/ul/li[4]/div[@class='product-container']//a[@title='Add to cart']/span[.='Add to cart']")
     private WebElement dress06AddToCart;
 
-    @FindBy(xpath = "//div[@id='center_column']/ul/li[5]/div[@class='product-container']//a[@title='Add to cart']/span[.='Add to cart']")
+    @FindBy(css = ".ajax_block_product.col-md-4.col-sm-6.col-xs-12.first-item-of-tablet-line.last-line.last-mobile-line > .product-container > .right-block > .button-container > a[title='Add to cart'] > span")
     private WebElement dress07AddToCart;
 
     @FindBy(css = "span[title='Continue shopping'] > span")
